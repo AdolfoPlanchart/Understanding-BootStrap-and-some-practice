@@ -1,0 +1,24 @@
+<label>Server list: </label>
+
+<div class="row">
+  <div class="col-xs-5">
+    <ul class="list-group">
+      <li *ngFor="let server of servers" class="list-group-item">
+        {{ server }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-7">
+    <div class="col-xs-8">
+      <input class="form-control" #srv
+             (keyup.enter)="addServer(srv.value); srv.value=''">
+      <label *ngIf="emptyError">Error! Can't add empty value.</label>
+      <button class="btn btn-success btn-block"
+              (click)="addServer(srv.value); srv.value=''">Add a new Server</button>
+      <button class="btn btn-warning btn-block"
+              (click)="delLstSrv()">Delete last Server added</button>
+      <button class="btn btn-danger btn-block"
+              (click)="delSrvrs()">Delete all Servers</button>
+    </div>
+  </div>
+</div>

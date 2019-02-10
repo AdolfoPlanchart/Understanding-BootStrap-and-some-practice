@@ -1,0 +1,25 @@
+<label>Username: </label>
+
+<input type="text" class="form-control" #usr>
+
+<br>
+
+<label>Password: </label>
+
+<input type="password" class="form-control" #psw>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-sm-7">
+    <button class="btn btn-success btn-block" (click)="logIn(usr.value, psw.value)">Log In</button>
+  </div>
+  <div class="col-sm-5">
+    <button class="btn btn-danger btn-block" (click)="usr.value = ''; psw.value = ''">Clear fields</button>
+  </div>
+  <hr>
+  <div class="col-sm-2">
+      <a href="#" class="btn btn-default">Register</a>
+  </div>
+</div>
